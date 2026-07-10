@@ -1,0 +1,20 @@
+.page {
+  margin: 0 auto;
+  max-width: 1280px;
+ /*  border: 1px solid pink; */
+  font-family: "Inter", sans-serif;
+  font-size: 24px;
+  line-height: 1.5;
+}
+
+@media screen and (max-width:768px){
+  .page{
+    max-width: 768px;
+  }
+}
+@media screen and (max-width:320px){
+  .page{
+    max-width: 320px;
+  }
+}
+

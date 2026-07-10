@@ -1,0 +1,92 @@
+.place {
+  max-width: 880px;
+  height: auto;
+  margin-top: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 17px;
+  justify-content: center;
+}
+
+.place__card {
+  position: relative;
+  width: 282px;
+  height: 361px;
+  border-radius: 10px;
+  background-color: #e5e5e5;
+}
+
+.place__card_image {
+  width: 100%;
+  height: 282px;
+}
+
+.place__card_content {
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+}
+.place__card_content_text {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: black;
+  font-weight: 900;
+  line-height: 100%;
+  margin: auto auto 31px 21px;
+  height: 60px;
+  border-radius: initial;
+}
+
+.place__card_content_like {
+  position: relative;
+  background-image: url("../images/likeButton.svg");
+  background-repeat: no-repeat;
+  border-radius: 0;
+  width: 21px;
+  height: 19px;
+  border: none;
+  background-color: transparent;
+  margin: auto 18px 30px auto;
+  padding: 0 10px;
+}
+.place__card_content_imgBottom {
+  width: 100%;
+  height: 100%;
+}
+
+.place__card_content_like:hover {
+  background-image: url("../images/likeButtonHover.svg");
+}
+
+.place_card_content_like--active {
+  opacity: 1;
+  background: url("../images/likeButtonBlack.svg") center no-repeat;
+}
+
+.place__card_trash {
+  position: absolute;
+  width: 18px;
+  height: 20px;
+  background: url("../images/TrashWhite.svg");
+  background-repeat: no-repeat;
+  background-color: transparent;
+  background-position: center;
+  background-size: contain;
+  border: none;
+  top: 18px;
+  right: 15px;
+  z-index: 3;
+}
+
+.place__card_trash:hover{
+   background: url("../images/Trashover.svg");
+}
+@media screen and (max-width: 768px) {
+  .place {
+    max-width: 768px;
+    height: auto;
+  }
+}

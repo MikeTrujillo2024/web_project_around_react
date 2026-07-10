@@ -1,0 +1,133 @@
+.profile {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 40px 0;
+  width: 100%;
+  max-height: 120px;
+}
+
+.profile__image {
+  max-width: 120px;
+  max-height: 120px;
+  border-radius: 50%;
+}
+
+.profile__image-edit {
+  position: absolute;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/Edit__image-profile.png");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  z-index: 2;
+  opacity: 0;
+
+}
+
+
+.profile__image-edit:hover {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+}
+
+.profile__info {
+  max-width: 415px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.profile__name {
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+  font-size: 42px;
+  line-height: 48px;
+  grid-column: 1 / 6;
+  align-self: flex-end;
+}
+
+.profile__info_edit_button {
+  width: 24px;
+  height: 24px;
+  background-color: black;
+  background-image: url("../images/editButton.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 1px solid white;
+  align-self: end;
+}
+
+.profile__info-button-add {
+  width: 150px;
+  height: 50px;
+  margin: auto 0;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+
+}
+
+.profile__about {
+  /*  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;  */
+  margin: 0;
+  font-size: 18px;
+  line-height: 100%;
+}
+
+.profile__info_edit_button:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+.profile__info-button-add:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 768px) {
+  .profile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 42px auto;
+    max-width: 282px;
+    max-height: 286px;
+  }
+
+  .profile__info {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr) 30px;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .profile__name {
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin: 0;
+    font-size: 22px;
+    line-height: 100%;
+    grid-column: 1 / 2;
+    align-self: flex-end;
+  }
+
+  .profile__info-button-add {
+    width: 100%;
+  }
+}
