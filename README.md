@@ -21,3 +21,17 @@ Proyecto web interactivo desarrollado como parte del bootcamp de Desarrollo Web 
 * Botón de "Me gusta" en desarrollo
 * Ventanas emergentes (popups)
 * Diseño adaptable para dispositivos móviles, tablet y escritorio
+
+
+## Demo del proyecto
+
+https://github.com/MikeTrujillo2024/web_project_around_react.git
+
+## Repositorio
+
+https://miketrujillo2024.github.io/web_project_around_react/
+
+## Autor
+
+Miguel Trujillo
+Desarrollador Fullstack Junior en formación | TripleTen Bootcamp
