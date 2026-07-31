@@ -26,7 +26,7 @@ const cards = [
   },
 ];
 
-console.log(cards)
+
 export default function MainPage() {
   /**popup */
   const [popup, setPopup] = useState(null);
@@ -34,6 +34,8 @@ export default function MainPage() {
   const newCardPopup = {title:"Nuevo Lugar", children:<NewCard />}
   const editPerfil = {title:"Editar Perfil", children:<EditPerfil />}
   const editAvatr = {title:"Cambiar foto de perfil", children:<EditAvatar />}
+  
+
 
 
   function handleOpenPopup(popup){
@@ -71,7 +73,7 @@ export default function MainPage() {
       <section className="place" id="place">
         {
           cards.map((card)=>(
-            <Card key={card._id} card={card}/>
+            <Card key={card._id} card={card} handleOpenPopup={handleOpenPopup}/>
           ))
         }
       </section>
