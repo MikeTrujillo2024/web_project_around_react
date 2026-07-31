@@ -1,16 +1,23 @@
-# React + Vite
+# TripleTen Web Project Around
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción del proyecto
 
-Currently, two official plugins are available:
+Proyecto web interactivo desarrollado como parte del bootcamp de Desarrollo Web Fullstack en TripleTen. Esta aplicación permite a los usuarios gestionar un perfil personal, agregar, eliminar y dar "me gusta" a imágenes, utilizando buenas prácticas de desarrollo frontend usando componentes en al tecnologia de React
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tecnologías utilizadas
 
-## React Compiler
+* React
+* HTML5
+* CSS3
+* JavaScript (ES6+)
+* Metodología BEM
+* Diseño Responsivo
+* Git y GitHub
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Características principales
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+* Edición de perfil de usuario
+* Agregar nuevas tarjetas de imágenes
+* Botón de "Me gusta" en desarrollo
+* Ventanas emergentes (popups)
+* Diseño adaptable para dispositivos móviles, tablet y escritorio

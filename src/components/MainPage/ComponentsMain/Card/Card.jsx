@@ -8,14 +8,14 @@ export default function Card(props) {
      * Vamos a desestructurarlo desde las props y a utilizarlo en los lugares correctos.
      */
     const { card, handleOpenPopup} = props
-    const {name,link,isLiked} = card;
+    const {name,link} = card;
     const imageComponent = {children:<ImagePopup card={card} />}
 
   return (
     <div className="place__card">
       <button type="button" className="place__card_trash"></button>
       <img
-        src={card.link}
+        src={link}
         alt="image card place"
         className="place__card place__card_image"
          onClick={()=>handleOpenPopup(imageComponent)}

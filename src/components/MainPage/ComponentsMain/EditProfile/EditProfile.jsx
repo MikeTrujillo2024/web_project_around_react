@@ -1,4 +1,4 @@
-export default function EditPerfil() {
+export default function EditProfile() {
   return (
     <form className="popup__container_form" noValidate>
       {/* <fieldset className="popup__content"> */}

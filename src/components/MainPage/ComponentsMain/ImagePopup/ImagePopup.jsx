@@ -1,4 +1,5 @@
 export default function ImagePopup({card}) {
+ 
   return (
     <>
       <img className="popup__img" src={card.link} alt="Empty Image" />

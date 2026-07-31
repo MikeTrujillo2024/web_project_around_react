@@ -2,7 +2,7 @@ import { useState } from "react";
 import Popup from "./ComponentsMain/popup/Popup";
 import avatar from "../../images/cara.jpg";
 import NewCard from "./ComponentsMain/NewCard/NewCard";
-import EditPerfil from "./ComponentsMain/EditPerfil/EditPerfil";
+import EditProfile from "./ComponentsMain/EditProfile/EditProfile";
 import EditAvatar from "./ComponentsMain/EditAvatar/EditAvatar";
 import Card from "./ComponentsMain/Card/Card";
 
@@ -32,7 +32,7 @@ export default function MainPage() {
   const [popup, setPopup] = useState(null);
 
   const newCardPopup = {title:"Nuevo Lugar", children:<NewCard />}
-  const editPerfil = {title:"Editar Perfil", children:<EditPerfil />}
+  const editPerfil = {title:"Editar Perfil", children:<EditProfile />}
   const editAvatr = {title:"Cambiar foto de perfil", children:<EditAvatar />}
   
 
@@ -62,7 +62,7 @@ export default function MainPage() {
           <button
             type="button"
             className="profile__info profile__info_edit_button"
-            onClick={()=>handleOpenPopup(editPerfil)}
+            onClick={()=>handleOpenPopup(EditProfile)}
           ></button>
           <span className="profile__info profile__about">Desarrollador</span>
         </div>
