@@ -32,7 +32,7 @@ export default function MainPage() {
   const [popup, setPopup] = useState(null);
 
   const newCardPopup = {title:"Nuevo Lugar", children:<NewCard />}
-  const editPerfil = {title:"Editar Perfil", children:<EditProfile />}
+  const editProfile = {title:"Editar Perfil", children:<EditProfile />}
   const editAvatr = {title:"Cambiar foto de perfil", children:<EditAvatar />}
   
 
@@ -62,7 +62,7 @@ export default function MainPage() {
           <button
             type="button"
             className="profile__info profile__info_edit_button"
-            onClick={()=>handleOpenPopup(EditProfile)}
+            onClick={()=>handleOpenPopup(editProfile)}
           ></button>
           <span className="profile__info profile__about">Desarrollador</span>
         </div>
