@@ -27,7 +27,7 @@ const cards = [
 ];
 
 
-export default function MainPage() {
+export default function Main() {
   /**popup */
   const [popup, setPopup] = useState(null);
 
