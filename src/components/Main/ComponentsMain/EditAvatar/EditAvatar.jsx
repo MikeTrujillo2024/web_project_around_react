@@ -1,5 +1,5 @@
 import { useContext, useRef } from "react";
-import onUpdateAvatar from "../../../../context/CurrentUserContext";
+import onUpdateAvatar from "../../../../contexts/CurrentUserContext";
 
 export default function EditAvatar() {
   const editAvatar = useRef();

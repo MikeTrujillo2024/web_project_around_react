@@ -1,6 +1,6 @@
 import {  useContext } from "react";
 import Card from "./ComponentsMain/Card/Card";
-import CurrentUserContext from "../../context/CurrentUserContext";
+import CurrentUserContext from "../../contexts/CurrentUserContext";
 
 
 export default function Main({ onOpenPopup,cards,onCardLike,onCardDelete,editAvatr,editProfile,newCardPopup }) {

@@ -7,7 +7,7 @@ import Popup from "./Main/ComponentsMain/popup/Popup";
 import NewCard from "./Main//ComponentsMain/NewCard/NewCard";
 import EditProfile from "./Main//ComponentsMain/EditProfile/EditProfile";
 import EditAvatar from "./Main//ComponentsMain/EditAvatar/EditAvatar";
-import CurrentUserContext from "../context/CurrentUserContext";
+import CurrentUserContext from "../contexts/CurrentUserContext";
 
 function App() {
   const [currentUser, setCurrentUser] = useState({});
