@@ -6,19 +6,30 @@ export default function Card(props) {
    * name , link y likescomo datos dinámicos.
    * Vamos a desestructurarlo desde las props y a utilizarlo en los lugares correctos.
    */
-  const { card, handleOpenPopup } = props;
+  const { card, handleOpenPopup, onCardLike, onCardDelete } = props;
   const { name, link, isLiked } = card;
   const imageComponent = { children: <ImagePopup card={card} /> };
 
-// Verifica si el usuario actual le ha dado "like" a la tarjeta
-const cardLikeButtonClassName = `card__like-button ${
-  isLiked ? 'place_card_content_like--active' : ''
-}`;
+  // Verifica si el usuario actual le ha dado "like" a la tarjeta
+  const cardLikeButtonClassName = `card__like-button ${
+    isLiked ? "place_card_content_like--active" : ""
+  }`;
 
-/* console.log(cardLikeButtonClassName) */
+  function handleCardLikeClick() {
+    onCardLike(card);
+  }
+
+  function handleCardDeleteClick() {
+    /* onCardDelete() */
+    onCardDelete(card);
+  }
   return (
     <div className="place__card">
-      <button type="button" className="place__card_trash"></button>
+      <button
+        type="button"
+        className="place__card_trash"
+        onClick={handleCardDeleteClick}
+      ></button>
       <img
         src={link}
         alt="image card place"
@@ -30,6 +41,7 @@ const cardLikeButtonClassName = `card__like-button ${
         <button
           type="button"
           className={`place__card place__card_content_like ${cardLikeButtonClassName}`}
+          onClick={handleCardLikeClick}
         ></button>
       </div>
     </div>

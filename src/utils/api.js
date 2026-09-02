@@ -46,7 +46,7 @@ export default class Api {
                 link: data.url
             })
         })
-            .then(card => this._checkRes(card))
+            .then(card => this._checkRes(card) )
     }
 
     /**
@@ -83,7 +83,8 @@ export default class Api {
      * cambiamos el like 
      */
     async changeLikeStatus(cardId, cardLike) {
-        const methodStatus = cardLike ? 'DELETE' : 'PUT';
+
+        const methodStatus = cardLike ? 'PUT' : 'DELETE';
         return await fetch(`${this._baseUrl}/cards/${cardId}/likes`, {
             method: methodStatus,
             headers: this._headers
@@ -113,11 +114,11 @@ export default class Api {
             method: "PATCH",
             headers: this._headers,
             body: JSON.stringify({
-                avatar: avatar.url__avatar
+                avatar: avatar.avatar
             })
         })
             .then(imgAvatar => this._checkRes(imgAvatar))
-    }
+    } 
 }
 
 /**
