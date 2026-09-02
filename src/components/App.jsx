@@ -3,7 +3,7 @@ import Header from "./Header/Header";
 import Main from "./Main/Main";
 import Footer from "./Footer/Footer";
 import { api } from "../utils/api";
-import Popup from "./Main/ComponentsMain/popup/Popup";
+
 import NewCard from "./Main//ComponentsMain/NewCard/NewCard";
 import EditProfile from "./Main//ComponentsMain/EditProfile/EditProfile";
 import EditAvatar from "./Main//ComponentsMain/EditAvatar/EditAvatar";
@@ -134,20 +134,18 @@ function App() {
 
         <Main
           onOpenPopup={handleOpenPopup}
+          cards={cards}
+          popup={popup}
+          onCardLike={handleCardLike}
+          onCardDelete={handleCardDelete}
+          onHandleClosePopup={handleClosePopup}
           editAvatr={editAvatr}
           editProfile={editProfile}
           newCardPopup={newCardPopup}
-          cards={cards}
-          onCardLike={handleCardLike}
-          onCardDelete={handleCardDelete}
         />
 
         <Footer />
-        {popup && (
-          <Popup onClose={handleClosePopup} title={popup.title}>
-            {popup.children}
-          </Popup>
-        )}
+        
       </>
     </CurrentUserContext.Provider>
   );

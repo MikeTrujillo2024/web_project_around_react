@@ -1,11 +1,19 @@
-import {  useContext } from "react";
+import { useState, useContext } from "react";
+import Popup from "./ComponentsMain/popup/Popup";
 import Card from "./ComponentsMain/Card/Card";
 import CurrentUserContext from "../../contexts/CurrentUserContext";
 
-
-export default function Main({ onOpenPopup,cards,onCardLike,onCardDelete,editAvatr,editProfile,newCardPopup }) {
- 
-
+export default function Main({
+  onOpenPopup,
+  cards,
+  popup,
+  onCardLike,
+  onCardDelete,
+  onHandleClosePopup,
+  editAvatr,
+  editProfile,
+  newCardPopup,
+}) {
   /**
    * este contiene la informacion del usuario que esta logueado
    * este se pasa desde contexto, este nos ayuda a pasar la informacion
@@ -57,7 +65,11 @@ export default function Main({ onOpenPopup,cards,onCardLike,onCardDelete,editAva
           ))}
         </section>
       </main>
-      
+      {popup && (
+        <Popup onClose={onHandleClosePopup} title={popup.title}>
+          {popup.children}
+        </Popup>
+      )}
     </>
   );
 }
