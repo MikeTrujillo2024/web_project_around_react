@@ -1,14 +1,19 @@
+import { useContext } from "react";
 import ImagePopup from "../ImagePopup/ImagePopup";
+import CurrentUserContextCard from "../../../../contexts/CurrentUserContext";
 
 export default function Card(props) {
+  const {currentUser} = useContext(CurrentUserContextCard);
   /**
    * Actualmente, tenemos datos ficticios para las tarjetas, que incluyen el
    * name , link y likescomo datos dinámicos.
    * Vamos a desestructurarlo desde las props y a utilizarlo en los lugares correctos.
    */
+
   const { card, handleOpenPopup, onCardLike, onCardDelete } = props;
   const { name, link, isLiked } = card;
   const imageComponent = { children: <ImagePopup card={card} /> };
+
 
   // Verifica si el usuario actual le ha dado "like" a la tarjeta
   const cardLikeButtonClassName = `card__like-button ${
@@ -20,16 +25,17 @@ export default function Card(props) {
   }
 
   function handleCardDeleteClick() {
-    /* onCardDelete() */
     onCardDelete(card);
   }
   return (
     <div className="place__card">
+      {currentUser._id === card.owner &&(
       <button
         type="button"
         className="place__card_trash"
         onClick={handleCardDeleteClick}
       ></button>
+      )}
       <img
         src={link}
         alt="image card place"

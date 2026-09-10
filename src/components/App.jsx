@@ -43,64 +43,63 @@ function App() {
   async function handleCardLike(card) {
     // Verifica una vez más si a esta tarjeta ya les has dado like
     const isLiked = card.isLiked;
-
-    // Envía una solicitud a la API y obtén los datos actualizados de la tarjeta
-    await api
-      .changeLikeStatus(card._id, !isLiked)
-      .then((newCard) => {
-        setCards((state) =>
-          state.map((currentCard) =>
-            currentCard._id === card._id ? newCard : currentCard,
-          ),
-        );
-      })
-      .catch((error) => console.error(error));
+    try {
+      // Envía una solicitud a la API y obtén los datos actualizados de la tarjeta
+      const newCard = await api.changeLikeStatus(card._id, !isLiked);
+      setCards((state) =>
+        state.map((currentCard) =>
+          currentCard._id === card._id ? newCard : currentCard,
+        ),
+      );
+    } catch (error) {
+      console.error(error);
+    }
   }
 
   //elimina una card
   async function handleCardDelete(card) {
     const idCard = card._id;
-
-    await api
-      .deleteCard(idCard)
-      .then(() => {
-        setCards((state) =>
-          state.filter((currentCard) => currentCard._id !== idCard),
-        );
-      })
-      .catch((error) => console.log(error));
+    try {
+      await api.deleteCard(idCard);
+      setCards((state) =>
+        state.filter((currentCard) => currentCard._id !== idCard),
+      );
+    } catch (error) {
+      console.log(error);
+    }
   }
 
   // esta funcion nos ayuda a actualizar el usuario
-  const handleUpdateUser = (data) => {
-    (async () => {
-      await api.editUserInfo(data).then((newData) => {
-        setCurrentUser(newData);
-        handleClosePopup();
-      });
-    })();
+  const handleUpdateUser = async (data) => {
+    try {
+      const newData = await api.editUserInfo(data);
+      setCurrentUser(newData);
+      handleClosePopup();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
-  const handleUpdateAvatar = (data) => {
-    (async () => {
-      await api.updateAvatar(data).then((newAvatar) => {
-        setCurrentUser(newAvatar);
-        handleClosePopup();
-      });
-    })();
+  const handleUpdateAvatar = async (data) => {
+    try {
+      const newAvatar = await api.updateAvatar(data);
+      setCurrentUser(newAvatar);
+      handleClosePopup();
+    } catch (error) {
+    console.log(error);
+  }
   };
 
-  const handleAddPlaceSubmit = (data) => {
-    (async () => {
-      await api
-        .addCard(data)
-        .then((newCard) => {
-          setCards([newCard, ...cards]);
+  const handleAddPlaceSubmit = async (data) => {
+    try{
+      const newCard = await api.addCard(data);
+        
+          setCards((state)=>[newCard, ...cards]);
           handleClosePopup();
-        })
-        .catch((error) => console.log(error));
-    })();
-  };
+        }catch(error){
+          console.log(error)
+        } 
+    };
 
   const newCardPopup = {
     title: "Nuevo Lugar",
@@ -111,10 +110,8 @@ function App() {
     title: "Cambiar foto de perfil",
     children: <EditAvatar />,
   };
-  
 
   function handleOpenPopup(popup) {
-    
     setPopup(popup);
   }
 
@@ -145,7 +142,6 @@ function App() {
         />
 
         <Footer />
-        
       </>
     </CurrentUserContext.Provider>
   );
