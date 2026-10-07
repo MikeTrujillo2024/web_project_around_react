@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useContext } from "react";
 import Popup from "./ComponentsMain/popup/Popup";
 import Card from "./ComponentsMain/Card/Card";
 import CurrentUserContext from "../../contexts/CurrentUserContext";

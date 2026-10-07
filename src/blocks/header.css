@@ -1,13 +1,45 @@
 .header {
-    margin: 0 auto;
+  margin: 0 auto;
   max-width: 880px;
   height: 74px;
   padding-top: 45px;
   border-bottom: solid #545454;
   border-bottom-width: thin;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 .header__logo {
   width: 173px;
   height: 33px;
+}
+
+.header__status{       
+  width: 40%;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.headerStatus__Email{
+  margin: auto;
+  text-decoration: none;
+  color: #fff;
+}
+
+.headerStatus__session{
+  background: none;
+  border: 0;
+  color: #fff;
+  font-weight: 400;
+  font-size: 14px;
+}
+
+.headerStatus__session:hover,
+.headerStatus__Email:hover{
+ cursor: pointer;
+ opacity: 0.8;
 }

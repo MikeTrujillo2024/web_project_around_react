@@ -151,6 +151,48 @@
   height: 181px;
 }
 
+.popup__container-infotooltip{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.container__img{
+  max-height: 120px;
+  width: 100%;
+  margin: 0;
+}
+
+.container__svgImg{
+  display: block;
+  margin: 0 auto;
+  height: 120px;
+  width: 120px;
+  align-items: center;
+}
+
+.container__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+}
+
+.text__message_error{
+  margin: 30px 0 0;
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.text__message{
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 1.5;
+  text-align: center;
+}
+
 @media screen and (max-width: 768px) {
   .popup__wrap {
     position: absolute;

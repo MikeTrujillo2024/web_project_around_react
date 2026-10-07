@@ -22,6 +22,31 @@ Proyecto web interactivo desarrollado como parte del bootcamp de Desarrollo Web 
 * Ventanas emergentes (popups)
 * Diseño adaptable para dispositivos móviles, tablet y escritorio
 
+## mapa de como se ve el proyecto
+
+
+                    ┌───────────────┐
+                    │   Usuario     │
+                    └───────┬───────┘
+                            │
+                 ┌──────────┴──────────┐
+                 │                     │
+              /signin                /signup
+                 │                     │
+               Login                Register
+                 │                     │
+                 └──────────┬──────────┘
+                            │
+                      autenticación
+                            │
+                     ¿está autorizado?
+                       /          \
+                     NO            SÍ
+                     │              │
+                  /signin           /
+                                    │
+                              App principal
+
 
 ## Demo del proyecto
 
